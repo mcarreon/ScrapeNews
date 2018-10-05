@@ -15,7 +15,7 @@ app.use(express.urlencoded({
 app.use(express.json());
 app.use(express.static("public"));
 
-mongoose.connect("mongodb://localhost:27017/scrape", {
+mongoose.connect("mongodb://heroku_fbj1bzvr@ds123603.mlab.com:23603/heroku_fbj1bzvr" || "mongodb://localhost:27017/scrape", {
     useNewUrlParser: true
 });
 

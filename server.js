@@ -15,9 +15,10 @@ app.use(express.urlencoded({
 app.use(express.json());
 app.use(express.static("public"));
 
-mongoose.connect("mongodb://heroku_fbj1bzvr@ds123603.mlab.com:23603/heroku_fbj1bzvr" || "mongodb://localhost:27017/scrape", {
-    useNewUrlParser: true
-});
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/scrape";
+
+mongoose.Promise = Promise;
+mongoose.connect(MONGODB_URI);
 
 // A GET route for scraping the echoJS website
 app.get("/scrape", function (req, res) {

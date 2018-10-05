@@ -15,7 +15,9 @@ app.use(express.urlencoded({
 app.use(express.json());
 app.use(express.static("public"));
 
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/scrape";
+var MONGODB_URI = "mongodb://admin:1admin@ds123603.mlab.com:23603/heroku_hx745kq8" || "mongodb://localhost/scrape";
+console.log(process.env.MONGODB_URI);
+
 
 mongoose.Promise = Promise;
 mongoose.connect(MONGODB_URI);

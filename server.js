@@ -6,7 +6,7 @@ var cheerio = require("cheerio");
 
 var db = require("./models");
 
-var PORT = 3000;
+var PORT = process.env.PORT || 3000;
 
 var app = express();
 app.use(express.urlencoded({
@@ -16,7 +16,7 @@ app.use(express.json());
 app.use(express.static("public"));
 
 var MONGODB_URI = "mongodb://admin:1admin@ds123603.mlab.com:23603/heroku_hx745kq8" || "mongodb://localhost/scrape";
-console.log(process.env.MONGODB_URI);
+//console.log(process.env.MONGODB_URI);
 
 
 mongoose.Promise = Promise;
